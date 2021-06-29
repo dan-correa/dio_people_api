@@ -1,6 +1,7 @@
 package one.digitalinnovation.personapi.controller;
 
 
+import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.MessageResponseDTO;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
@@ -15,15 +16,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/people")
-
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonalController {
 
     private PersonService personService;
 
-    @Autowired
+ /*   @Autowired
     public PersonalController(PersonService personService) {
         this.personService = personService;
-    }
+    } -> com a anotação onConstructor não é necessário esse construtor padrão para injeção de dependencias*/
 
 
     @PostMapping
